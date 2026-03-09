@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smart Expense Tracker</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>💰 Smart Expense Tracker</h1>
+<p class="tagline">Track Smart • Spend Smart • Save Smart</p>
+
+<div class="search-box">
+<input type="text" id="search" placeholder="Search expenses..." onkeyup="searchExpense()">
+</div>
+
+<div class="budget-row">
+<input type="number" id="budgetInput" placeholder="Set Monthly Budget">
+<button onclick="setBudget()">Set Budget</button>
+</div>
+
+<div class="summary">
+
+<div class="card">
+<h3>Budget</h3>
+<p id="budget">₹0</p>
+</div>
+
+<div class="card">
+<h3>Total Spent</h3>
+<p id="spent">₹0</p>
+</div>
+
+<div class="card">
+<h3>Remaining</h3>
+<p id="remaining">₹0</p>
+</div>
+
+<div class="card">
+<h3>Transactions</h3>
+<p id="transactions">0</p>
+</div>
+
+</div>
+
+<div class="form">
+
+<input type="date" id="date">
+
+<input type="text" id="name" placeholder="Expense Name">
+
+<select id="category">
+<option>Food</option>
+<option>Bills</option>
+<option>Transport</option>
+<option>Shopping</option>
+<option>Education</option>
+<option>Others</option>
+</select>
+
+<input type="number" id="amount" placeholder="Amount">
+
+<button onclick="addExpense()">Add Expense</button>
+
+</div>
+
+<div class="chart-box">
+<canvas id="chart"></canvas>
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>Date</th>
+<th>Name</th>
+<th>Category</th>
+<th>Amount</th>
+<th>Action</th>
+</tr>
+</thead>
+
+<tbody id="table"></tbody>
+
+</table>
+
+<div class="ai-box">
+<b>🤖 AI Financial Insights</b>
+<p id="aiInsight">Add expenses to see smart insights.</p>
+</div>
+
+<div class="actions">
+
+<button class="download" onclick="downloadPDF()">Download PDF</button>
+
+<button class="share" onclick="shareReport()">Share</button>
+
+<button class="clear" onclick="clearAll()">Clear All</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
